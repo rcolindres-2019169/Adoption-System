@@ -1,12 +1,13 @@
 import mongoose from "mongoose";
 
 const animalSchema = mongoose.Schema({
-    name:{
+    namePet:{
         type: String,
         required: true
     },
     keeper:{
-        type: Schema.ObjectId, ref:"user",
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
         required: true
     },
     race:{
@@ -19,4 +20,4 @@ const animalSchema = mongoose.Schema({
     }
 })
 
-export default mongoose.model('animal', animalSchema    )
+export default mongoose.model('animal', animalSchema)
